@@ -3,68 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NCS - Collection of Samples and Snippets for nRF Devices</title>
+    <title>NCS - Collection of Samples and Snippets</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            display: flex;
+            font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
             background-color: #f4f4f4;
-        }
-
-        main {
-            flex: 1;
-            padding: 20px;
+            color: #333;
         }
 
         header {
-            text-align: center;
-            background-color: #0082c9; /* Nordic Semiconductor Blue */
-            color: #fff;
-            padding: 10px;
-        }
-
-        section {
-            display: flex;
-            margin-top: 20px;
-        }
-
-        aside {
-            width: 250px;
-            padding: 20px;
-            background-color: #fff;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            border-radius: 5px;
-            margin-left: 20px;
-        }
-
-        article {
-            background-color: #fff;
+            background-color: #007acc; /* Nordic Blue */
             padding: 15px;
-            margin-bottom: 20px;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            color: #fff;
         }
 
-        code {
-            background-color: #f0f0f0;
-            padding: 2px 4px;
-            border: 1px solid #ccc;
+        nav {
+            float: right;
+            width: 20%;
+            padding: 20px;
+            background-color: #e6e6e6;
         }
 
-        pre {
-            background-color: #f0f0f0;
-            padding: 10px;
-            overflow-x: auto;
-            border: 1px solid #ccc;
+        main {
+            float: left;
+            width: 75%;
+            padding: 20px;
+        }
+
+        h2 {
+            color: #007acc; /* Nordic Blue */
+        }
+
+        .blog-entry {
+            margin-bottom: 30px;
         }
 
         footer {
+            clear: both;
             text-align: center;
-            margin-top: 20px;
             padding: 10px;
-            background-color: #0082c9; /* Nordic Semiconductor Blue */
+            background-color: #007acc; /* Nordic Blue */
             color: #fff;
         }
     </style>
@@ -74,54 +55,34 @@
         <h1>NCS - Collection of Samples and Snippets for nRF Devices</h1>
     </header>
 
-    <section>
-        <main>
-            <article id="post1">
-                <h2>Getting Started with nRF52</h2>
-                <p>
-                    Welcome.
-                    Here's a simple code snippet to get you started:
-                </p>
-                <pre><code>
-#include <stdio.h>
+    <nav>
+        <h2>Latest Blog Entries</h2>
+        <ul>
+            <li><a href="#">Getting Started with nRF Connect SDK</a></li>
+            <li><a href="#">BLE Advertising in nRF Connect SDK</a></li>
+            <li><a href="#">Interrupt Handling in nRF Devices</a></li>
+        </ul>
+    </nav>
 
-int main() {
-    printf("Hello, nRF52!\n");
-    return 0;
-}
-                </code></pre>
-            </article>
+    <main>
+        <article class="blog-entry">
+            <h2>Getting Started with nRF Connect SDK</h2>
+            <p>Dive into the basics of nRF Connect SDK with this comprehensive guide...</p>
+        </article>
 
-            <article id="post2">
-                <h2>Advanced Features of nRF52</h2>
-                <p>
-                    In this section, we'll explore some advanced features of the nRF52. Take a look at this coding example
-                    demonstrating the use of a specific feature:
-                </p>
-                <pre><code>
-#include <nrf52_specific_library.h>
+        <article class="blog-entry">
+            <h2>BLE Advertising in nRF Connect SDK</h2>
+            <p>Learn how to leverage BLE advertising in your projects...</p>
+        </article>
 
-int main() {
-    // Your advanced code here
-    return 0;
-}
-                </code></pre>
-            </article>
-            <!-- Add more articles as needed -->
-        </main>
-
-        <aside>
-            <h2>Latest Blog Posts</h2>
-            <ul>
-                <li><a href="#post1">Getting Started with nRF52</a></li>
-                <li><a href="#post2">Advanced Features of nRF52</a></li>
-                <!-- Add more post links as needed -->
-            </ul>
-        </aside>
-    </section>
+        <article class="blog-entry">
+            <h2>Interrupt Handling in nRF Devices</h2>
+            <p>Master the art of interrupt handling with our detailed guide...</p>
+        </article>
+    </main>
 
     <footer>
-        <p>&copy; 2023 Your Name. All rights reserved.</p>
+        <p>&copy; 2023 NCS - Collection of Samples and Snippets for nRF Devices</p>
     </footer>
 </body>
 </html>
