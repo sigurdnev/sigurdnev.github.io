@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Setting HFXO internal load cap values"
+date: 2026-02-25 12:00:00 +0000
 tags: [Clocking, HFXO, nRF]
 ---
 Correct HFXO load capacitor settings are important for startup reliability and frequency accuracy.
