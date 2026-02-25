@@ -1,0 +1,32 @@
+site:
+  title: "NCS Samples & Snippets"
+  subtitle: "A collection of samples and snippets"
+  intro: ""
+  cta_text: "Browse all articles"
+  cta_link: "#articles"
+  footer_text: "NCS Samples & Snippets"
+
+highlights:
+  - title: "Production-minded code"
+    text: "Real-world patterns with maintainable structure and clear trade-offs."
+  - title: "Hardware-focused tutorials"
+    text: "BLE, low-power design, interrupts, and peripheral integration guides."
+  - title: "Fast onboarding"
+    text: "Step-by-step content to help new contributors ship useful examples quickly."
+
+articles:
+  - title: "Getting Started with nRF Connect SDK"
+    date: "2026-02-01"
+    tags: ["Beginner", "NCS", "Setup"]
+    excerpt: "Set up your toolchain, understand project structure, and build your first firmware image."
+    url: "#"
+  - title: "BLE Advertising in nRF Connect SDK"
+    date: "2026-02-10"
+    tags: ["BLE", "Wireless", "nRF"]
+    excerpt: "Build robust advertising workflows with practical configuration examples."
+    url: "#"
+  - title: "Interrupt Handling in nRF Devices"
+    date: "2026-02-17"
+    tags: ["RTOS", "Performance", "Drivers"]
+    excerpt: "Design responsive, stable interrupt paths and avoid common timing pitfalls."
+    url: "#"

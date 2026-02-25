@@ -1,0 +1,29 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "Jekyll: Install Prerequisites",
+			"type": "shell",
+			"command": "$rubyBin = $null; $rubyCmd = Get-Command ruby -ErrorAction SilentlyContinue; if ($rubyCmd) { $rubyBin = Split-Path $rubyCmd.Source -Parent }; if (-not $rubyBin) { $candidate = Get-ChildItem 'C:\\Ruby*' -Directory -ErrorAction SilentlyContinue | Sort-Object Name -Descending | Select-Object -First 1; if (-not $candidate) { $candidate = Get-ChildItem \"$env:LOCALAPPDATA\\Programs\\Ruby\" -Directory -ErrorAction SilentlyContinue | Sort-Object Name -Descending | Select-Object -First 1 }; if ($candidate) { $rubyBin = Join-Path $candidate.FullName 'bin' } }; if (-not $rubyBin) { winget install --id RubyInstallerTeam.RubyWithDevKit.3.4 --exact --accept-package-agreements --accept-source-agreements; $candidate = Get-ChildItem 'C:\\Ruby*' -Directory -ErrorAction SilentlyContinue | Sort-Object Name -Descending | Select-Object -First 1; if (-not $candidate) { $candidate = Get-ChildItem \"$env:LOCALAPPDATA\\Programs\\Ruby\" -Directory -ErrorAction SilentlyContinue | Sort-Object Name -Descending | Select-Object -First 1 }; if ($candidate) { $rubyBin = Join-Path $candidate.FullName 'bin' } }; if (-not $rubyBin -or -not (Test-Path (Join-Path $rubyBin 'gem.cmd'))) { Write-Host 'Ruby not found after install. Restart VS Code and rerun this task.'; exit 1 }; $env:Path = $rubyBin + ';' + $env:Path; gem install bundler jekyll",
+			"args": [],
+			"problemMatcher": []
+		},
+		{
+			"label": "Jekyll: Preview Site",
+			"type": "shell",
+			"command": "$rubyBin = $null; $rubyCmd = Get-Command ruby -ErrorAction SilentlyContinue; if ($rubyCmd) { $rubyBin = Split-Path $rubyCmd.Source -Parent }; if (-not $rubyBin) { $candidate = Get-ChildItem 'C:\\Ruby*' -Directory -ErrorAction SilentlyContinue | Sort-Object Name -Descending | Select-Object -First 1; if (-not $candidate) { $candidate = Get-ChildItem \"$env:LOCALAPPDATA\\Programs\\Ruby\" -Directory -ErrorAction SilentlyContinue | Sort-Object Name -Descending | Select-Object -First 1 }; if ($candidate) { $rubyBin = Join-Path $candidate.FullName 'bin' } }; if ($rubyBin) { $env:Path = $rubyBin + ';' + $env:Path }; $jekyll = Get-Command jekyll -ErrorAction SilentlyContinue; if ($jekyll) { jekyll serve --livereload } else { Write-Host 'Jekyll not found. Run task: Jekyll: Install Prerequisites'; exit 1 }",
+			"args": [],
+			"isBackground": true,
+			"problemMatcher": [],
+			"group": "build"
+		},
+		{
+			"label": "Jekyll: Build Site",
+			"type": "shell",
+			"command": "$rubyBin = $null; $rubyCmd = Get-Command ruby -ErrorAction SilentlyContinue; if ($rubyCmd) { $rubyBin = Split-Path $rubyCmd.Source -Parent }; if (-not $rubyBin) { $candidate = Get-ChildItem 'C:\\Ruby*' -Directory -ErrorAction SilentlyContinue | Sort-Object Name -Descending | Select-Object -First 1; if (-not $candidate) { $candidate = Get-ChildItem \"$env:LOCALAPPDATA\\Programs\\Ruby\" -Directory -ErrorAction SilentlyContinue | Sort-Object Name -Descending | Select-Object -First 1 }; if ($candidate) { $rubyBin = Join-Path $candidate.FullName 'bin' } }; if ($rubyBin) { $env:Path = $rubyBin + ';' + $env:Path }; $jekyll = Get-Command jekyll -ErrorAction SilentlyContinue; if ($jekyll) { jekyll build } else { Write-Host 'Jekyll not found. Run task: Jekyll: Install Prerequisites'; exit 1 }",
+			"args": [],
+			"problemMatcher": [],
+			"group": "build"
+		}
+	]
+}

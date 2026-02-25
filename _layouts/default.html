@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% if page.title %}{{ page.title }} · {% endif %}{{ site.data.home.site.title }}</title>
+  <meta name="description" content="{{ page.excerpt | strip_html | normalize_whitespace | truncate: 160 | default: site.data.home.site.intro }}">
+  <link rel="icon" type="image/png" href="{{ '/data_transfer.png' | relative_url }}">
+  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a class="brand" href="{{ '/' | relative_url }}">{{ site.data.home.site.title }}</a>
+      <nav class="nav" aria-label="Main">
+        <a href="{{ '/' | relative_url }}">Home</a>
+        <a href="{{ '/posts/' | relative_url }}">All posts</a>
+      </nav>
+    </div>
+  </header>
+
+  {{ content }}
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© {{ 'now' | date: '%Y' }} {{ site.data.home.site.footer_text }}. Built with Jekyll posts + Markdown.</p>
+    </div>
+  </footer>
+</body>
+</html>
