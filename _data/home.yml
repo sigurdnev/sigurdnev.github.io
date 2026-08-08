@@ -1,10 +1,10 @@
 site:
-  title: "NCS Samples & Snippets"
-  subtitle: "A collection of samples and snippets"
+  title: "nRF Notes"
+  subtitle: ""
   intro: ""
   cta_text: "Browse all articles"
   cta_link: "#articles"
-  footer_text: "NCS Samples & Snippets"
+  footer_text: "nRF Notes"
 
 highlights:
   - title: "Production-minded code"
